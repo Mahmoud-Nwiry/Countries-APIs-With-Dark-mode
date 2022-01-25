@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+    transition: background-color .1s;
+}
+
+:root {
+    --bg : rgb(250, 250, 250);
+    --text : rgb(17, 21, 23);
+    --elements : rgb(255, 255, 255);
+    --input : rgb(133, 133, 133);
+    --header-shadow : 0px 1px 10px 0px rgba(145,136,136,0.67);
+    --country-shadow :  1px 1px 10px 0px rgba(145,136,136,0.67);
+}
+
+body.dark {
+    --bg : rgb(32, 44, 55);
+    --text : rgb(255, 255, 255);
+    --elements : rgb(43, 57, 69);
+    --input : rgb(250, 250, 250);
+    --header-shadow : 0px 5px 20px 0px rgba(30, 30, 30, 0.67);
+    --country-shadow :  1px 1px 10px 0px rgba(30, 30, 30, 0.67);
+}
+
+body {
+    background-color: var(--bg);
+}
+
+.container { 
+    padding: 0 100px;
+}
+
+header {
+    background-color: var(--elements);
+    color: var(--text);
+    padding: 20px 0;
+    box-shadow: var(--header-shadow);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h4 {
+    font-size: 24px;
+}
+
+header .toggle {
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+header .toggle p {
+    font-size: 18px;
+    position: relative;
+}
+
+header .toggle p::before {
+    content: '\f186';
+    font-family: 'Font Awesome 5 Pro';
+    position: absolute;
+    top: 2px;
+    left: -30px;
+}
+
+body.dark header .toggle p::before{
+    content: '\f185';
+}
+
+/* ************************************** */
+
+.inputs{
+    padding: 50px 0;
+}
+
+.inputs .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.inputs .search-icon{
+    color: var(--input);
+    position: absolute;
+    font-size: 18px;
+    left: 122px;
+}
+
+.inputs .search {
+    background-color: var(--elements);
+    color: var(--text);
+    padding: 15px;
+    padding-left: 60px;
+    width: 400px;
+    border-radius: 3px;
+    font-size: 18px;
+    border: 0;
+    outline: none;
+    box-shadow: var(--country-shadow);
+}
+
+.inputs .search::placeholder {
+    color: var(--input);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.inputs select {
+    background-color: var(--elements);
+    color: var(--text);
+    box-shadow: var(--country-shadow);
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 0;
+    outline: none;
+    padding: 15px;
+    padding-right: 50px;
+}
+.inputs select::marker{
+    background-color: var(--input);
+}
+
+/* ************************************** */
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 80px;
+}
+
+.content .country-box{
+    background-color: var(--elements);
+    color: var(--text);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: var(--country-shadow);
+}
+
+.content .country-box img{
+    max-width: 100%;
+    width: 100%;
+    height: 150px;
+    background-color: var(--elements);
+}
+
+.content .country-box .details {
+    padding: 10px 20px;
+    margin-bottom: 10px;
+}
+
+.content .country-box .details h4 {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.content .country-box .details .item{
+    font-size: 16px;
+    font-weight: 400;
+    display: block;
+}
+
+.content .country-box .details .item h5{
+    font-size: 16px;
+    font-weight: 600;
+    display: inline;
+}
